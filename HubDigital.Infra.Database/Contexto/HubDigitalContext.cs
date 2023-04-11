@@ -8,12 +8,12 @@ namespace HubDigital.Infra.Database.Contexto
 {
     public class HubDigitalContext: DbContext
     {
-        public DbSet<Usuario> Usuarios { get; set; } = null!;
+        public DbSet<Usuario> Usuarios { get; set; }
 
 
-        public HubDigitalContext(DbContextOptions<HubDigitalContext> options):base(options)
+        public HubDigitalContext(DbContextOptions<HubDigitalContext> options) : base(options)
         {
-            Database.Migrate();
+           // Database.Migrate();
         }
 
 

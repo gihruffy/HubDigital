@@ -13,7 +13,7 @@ namespace HubDigital.Infra.Database.Configurations
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.ToTable("Usuario", "hubdigital");
+            builder.ToTable("Usuario");
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).IsRequired();

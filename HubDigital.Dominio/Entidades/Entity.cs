@@ -11,7 +11,7 @@ namespace HubDigital.Dominio.Entidades
         protected Entity() => Guid = Guid.NewGuid();
         public Guid Guid { get; protected set; }
         public DateTime DataCriacao { get; set; }
-        public DateTime DataAlterecao { get; set; }
+        public DateTime DataAlteracao { get; set; }
         public bool IsNew => Id == 0;
     }
 }

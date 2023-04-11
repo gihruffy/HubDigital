@@ -9,8 +9,10 @@ namespace HubDigital.Dominio.Repositorio
 {
     public interface IUsuarioRepositorio
     {
+        Task<List<Usuario>> ObterTodos();
         Task<Usuario> Obter(int id);
         Task<Usuario> ObterByGuid(Guid guid);
+        Task<Usuario> Obter(string login, string senha);
 
     }
 }

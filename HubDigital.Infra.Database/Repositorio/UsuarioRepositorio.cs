@@ -14,6 +14,11 @@ namespace HubDigital.Infra.Database.Repositorio
     {
         public UsuarioRepositorio(HubDigitalContext context) : base(context) { }
 
+        public async Task<List<Usuario>> ObterTodos()
+        {
+            return await NoTracking().ToListAsync();
+        }
+
         public async Task<Usuario> Obter(int id)
         {
             return await NoTracking().FirstOrDefaultAsync(x => x.Id == id);
@@ -22,6 +27,11 @@ namespace HubDigital.Infra.Database.Repositorio
         public async Task<Usuario> ObterByGuid(Guid guid)
         {
             return await NoTracking().FirstOrDefaultAsync(x => x.Guid == guid);
+        }
+
+        public async Task<Usuario> Obter(string login, string senha)
+        {
+            return await NoTracking().FirstOrDefaultAsync(x => x.Login == login && x.Senha == senha);
         }
     }
 }

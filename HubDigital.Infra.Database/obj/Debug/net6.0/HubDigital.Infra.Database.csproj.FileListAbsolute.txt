@@ -28,3 +28,5 @@ C:\sources\sesi\HubDigital\HubDigital.Infra.Database\obj\Debug\net6.0\HubDigital
 C:\sources\sesi\HubDigital\HubDigital.Infra.Database\obj\Debug\net6.0\refint\HubDigital.Infra.Database.dll
 C:\sources\sesi\HubDigital\HubDigital.Infra.Database\obj\Debug\net6.0\HubDigital.Infra.Database.pdb
 C:\sources\sesi\HubDigital\HubDigital.Infra.Database\obj\Debug\net6.0\ref\HubDigital.Infra.Database.dll
+C:\sources\sesi\HubDigital\HubDigital.Infra.Database\bin\Debug\net6.0\HubDigital.Infra.Database.runtimeconfig.json
+C:\sources\sesi\HubDigital\HubDigital.Infra.Database\obj\Debug\net6.0\HubDigital.Infra.Database.genruntimeconfig.cache

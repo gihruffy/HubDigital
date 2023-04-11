@@ -115,3 +115,8 @@ C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\refint\HubDigital.Api
 C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\HubDigital.Api.pdb
 C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\HubDigital.Api.genruntimeconfig.cache
 C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\ref\HubDigital.Api.dll
+C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\staticwebassets\msbuild.HubDigital.Api.Microsoft.AspNetCore.StaticWebAssets.props
+C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\staticwebassets\msbuild.build.HubDigital.Api.props
+C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.HubDigital.Api.props
+C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.HubDigital.Api.props
+C:\sources\sesi\HubDigital\HubDigital.Api\obj\Debug\net6.0\staticwebassets.pack.json

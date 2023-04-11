@@ -16,10 +16,18 @@ namespace HubDigital.Api.Controllers
             _usuarioService = usuarioService;
         }
 
-        [HttpGet]
+      /*  [HttpGet]
         public async Task<Usuario> GetUsuario(int id)
         {
             return await _usuarioService.GetUsuario(id);
+        }*/
+
+        [HttpGet]
+        public async Task<List<Usuario>> GetTodosUsuarios()
+        {
+            return await _usuarioService.GetUsuarios();
         }
+
+
     }
 }
