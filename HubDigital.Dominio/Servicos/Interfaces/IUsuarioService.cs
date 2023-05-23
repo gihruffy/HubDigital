@@ -13,9 +13,12 @@ namespace HubDigital.Dominio.Servicos.Interfaces
     {
 
         Task<AuthenticateResponse> Authenticate(AuthenticateRequest model);
+        Task<List<GetUsuarioResponseModel>> GetUsuarios();
         Task<Usuario> GetUsuario(int id);
-        Task<List<Usuario>> GetUsuarios();
         Task<Usuario> GetUsuarioByGuid(Guid guid);
-
+        Task<Usuario> CadastroUsuario(PostCadastroRequest model);
+        Task<Usuario> CriarNovaConta(PostNovaContaRequest model);
+        Task<Usuario> AtualizarUsuario(PutAtualizarCadastroRequest model);
+        Task<Usuario> DeletarUsuario(int id);
     }
 }

@@ -13,6 +13,6 @@ namespace HubDigital.Dominio.Repositorio
         Task<Usuario> Obter(int id);
         Task<Usuario> ObterByGuid(Guid guid);
         Task<Usuario> Obter(string login, string senha);
-
+        Usuario Salvar(Usuario usuario);
     }
 }

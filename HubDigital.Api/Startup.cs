@@ -79,6 +79,7 @@ namespace HubDigital.Api
 
             //Geral
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IService, Service>();
 
             //Services
             services.AddScoped<IUsuarioService, UsuarioService>();

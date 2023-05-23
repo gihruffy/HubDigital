@@ -13,16 +13,38 @@ using System.Threading.Tasks;
 
 namespace HubDigital.Dominio.Servicos
 {
-    public class UsuarioService : IUsuarioService
+    public class UsuarioService : Service, IUsuarioService
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
         private readonly IJwtUtils _jwtUtils;
 
 
-        public UsuarioService(IUsuarioRepositorio usuarioRepositorio, IJwtUtils jwtUtils)
+        public UsuarioService(
+            IUsuarioRepositorio usuarioRepositorio, 
+            IJwtUtils jwtUtils,
+            IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             _usuarioRepositorio = usuarioRepositorio;
             _jwtUtils = jwtUtils;
+        }
+
+        public async Task<Usuario> AtualizarUsuario(PutAtualizarCadastroRequest model)
+        {
+            var usuario = await _usuarioRepositorio.Obter(model.IdUsuario);
+
+            if (usuario == null)
+                throw new Exception("Nenhum usuário encontrado com os dados informados!");
+
+
+            usuario.Nome = model.Nome;
+            usuario.Login = model.Login;
+            usuario.Senha = model.Senha;
+            usuario.Email = model.Email;
+            usuario.DataNascimento = model.DataNascimento;
+
+            await SaveChangesAsync();
+
+            return usuario;
 
         }
 
@@ -38,6 +60,21 @@ namespace HubDigital.Dominio.Servicos
 
         }
 
+        public Task<Usuario> CadastroUsuario(PostCadastroRequest model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Usuario> CriarNovaConta(PostNovaContaRequest model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Usuario> DeletarUsuario(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Usuario> GetUsuario(int id)
         {
             return await _usuarioRepositorio.Obter(id);
@@ -48,10 +85,17 @@ namespace HubDigital.Dominio.Servicos
             return await _usuarioRepositorio.ObterByGuid(guid);
         }
 
-        public async Task<List<Usuario>> GetUsuarios()
+        public async Task<List<GetUsuarioResponseModel>> GetUsuarios()
         {
-            return await _usuarioRepositorio.ObterTodos();
+            var listaEntidade =  await _usuarioRepositorio.ObterTodos();
+            List<GetUsuarioResponseModel> usuariosModel = new List<GetUsuarioResponseModel>();
 
+            foreach (var entidade in listaEntidade)
+            {
+                usuariosModel.Add(GetUsuarioResponseModel.CriarComUsuario(entidade));
+            }
+
+            return usuariosModel;
         }
     }
 }

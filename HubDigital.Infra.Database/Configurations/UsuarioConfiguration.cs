@@ -24,7 +24,7 @@ namespace HubDigital.Infra.Database.Configurations
             builder.Property(x => x.Senha).IsRequired();
             builder.Property(x => x.Email).IsRequired();
             builder.Property(x => x.Permissao).IsRequired();
-            builder.Property(x => x.DataNascimento).IsRequired();
+            builder.Property(x => x.DataNascimento).IsRequired().HasColumnName("");
             builder.Property(x => x.Permissao).IsRequired();
         }
     }

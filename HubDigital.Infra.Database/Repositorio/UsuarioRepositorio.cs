@@ -33,5 +33,7 @@ namespace HubDigital.Infra.Database.Repositorio
         {
             return await NoTracking().FirstOrDefaultAsync(x => x.Login == login && x.Senha == senha);
         }
+
+
     }
 }

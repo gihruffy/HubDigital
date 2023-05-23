@@ -11,6 +11,7 @@ namespace HubDigital.Infra.Database.Contexto
         public DbSet<Usuario> Usuarios { get; set; }
 
 
+
         public HubDigitalContext(DbContextOptions<HubDigitalContext> options) : base(options)
         {
            // Database.Migrate();

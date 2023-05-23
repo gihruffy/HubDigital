@@ -1,6 +1,6 @@
-﻿using HubDigital.Dominio.Entidades;
+﻿using HubDigital.Dominio.Model.Request;
+using HubDigital.Dominio.Model.Response;
 using HubDigital.Dominio.Servicos.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HubDigital.Api.Controllers
@@ -16,18 +16,46 @@ namespace HubDigital.Api.Controllers
             _usuarioService = usuarioService;
         }
 
-      /*  [HttpGet]
-        public async Task<Usuario> GetUsuario(int id)
-        {
-            return await _usuarioService.GetUsuario(id);
-        }*/
-
         [HttpGet]
-        public async Task<List<Usuario>> GetTodosUsuarios()
+        [Route("todos")]
+        public async Task<List<GetUsuarioResponseModel>> GetTodosUsuarios()
         {
             return await _usuarioService.GetUsuarios();
         }
 
+        [HttpGet]
+        [Route("usuario")]
+        public async Task GetUsuario(int idUsuario)
+        {
+            await _usuarioService.GetUsuario(idUsuario);
+        }
 
+        [HttpPost]
+        [Route("cadastro")]
+        public async Task PostUsuario([FromBody] PostCadastroRequest model )
+        {
+            await _usuarioService.CadastroUsuario(model);
+        }
+
+        [HttpPost]
+        [Route("nova-conta")]
+        public async Task SalvarUsuario([FromBody] PostNovaContaRequest model)
+        {
+            await _usuarioService.CriarNovaConta(model);
+        }
+
+        [HttpPut]
+        [Route("atualizar-cadastro")]
+        public async Task AtualziarCadastro([FromBody] PutAtualizarCadastroRequest model)
+        {
+            await _usuarioService.AtualizarUsuario(model);
+        }
+
+        [HttpDelete]
+        [Route("deletar-usuario")]
+        public async Task DeletarUsuarios(int idUsuario)
+        {
+            await _usuarioService.DeletarUsuario(idUsuario);
+        }
     }
 }
